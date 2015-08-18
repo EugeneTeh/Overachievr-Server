@@ -3,7 +3,8 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var config = require('./config/env/'+ process.env.NODE_ENV + '.config'),
 	express = require('./config/express'),
-	thinky = require('./config/thinky');
+	thinky = require('./config/thinky'),
+	apn = require('./config/apn');
 
 var app = express();
 app.listen(config.express.port);
