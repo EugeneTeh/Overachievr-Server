@@ -21,16 +21,10 @@ exports.create = function (req, res, next) {
 }
 
 exports.update = function (req, res, next) {
-    var user = new User(req.body);
-    User.get(user.userPrimaryEmail).update({
-       title: req.body.title,
-       completed: req.body.completed
-    }).run().then(function(todo) {
-        res.send(JSON.stringify(todo));
-    }).error(handleError(res));
-
-    // Another way to update a todo is with
-    // Todo.get(req.body.id).update(todo).execute()
+	var user = new User(req.body);
+	User.get(user.userPrimaryEmail).update(user).execute().then(function(user) {
+		res.send(JSON.stringify(user));
+	}).error(handleError(res));
 }
 
 function handleError(res) {

@@ -10,6 +10,7 @@ var User = thinky.createModel("Users", {
     	userFBLastName: type.string(),
     	userFBName: type.string(),
     	userFBToken: type.string(),
+    	userFBID: type.string(),
     	userGMail: type.string(),
     	userGMailToken: type.string(),
     	userIsRegistered: type.boolean(),
